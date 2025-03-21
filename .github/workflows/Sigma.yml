@@ -1,4 +1,4 @@
-name: Ngrok_Windows_Github_RDP (Sounds On)
+name: Sigma niga
 
 on:
   workflow_dispatch:
@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     runs-on: windows-latest
-    timeout-minutes: 9999
+    timeout-minutes: 300
     
     steps:
       - name: Downloading Essentials
@@ -14,15 +14,15 @@ jobs:
           Invoke-WebRequest -Uri https://gitlab.com/chamod12/ngrok-win10-rdp/-/raw/main/Downloads.bat -OutFile Downloads.bat
           cmd /c Downloads.bat
 
-      - name: Connecting Ngrok Account
+      - name: Connecting sgma Account
         run: ngrok config add-authtoken $Env:NGROK_AUTH_TOKEN
         env:
           NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
           
-      - name: Enabling RDP Access
+      - name: Enabling sigm Access
         run: cmd /c Acess.bat       
 
-      - name: Log In To Remote Desktop Protocol
+      - name: Log In To heck Protocol
         run: cmd /c startaudio.bat
 
       - name: Time Count
